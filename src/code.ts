@@ -6,34 +6,38 @@ if (selection.length !== 1) {
   figma.closePlugin("Select a single node.");
 }
 
+const angle = 19.38
+const vskew = 51.5
+const hskew = angle
+
 function getOptions(direction) {
   switch (direction) {
     case "left":
       return {
         rotate: 0,
-        skew: 30,
-        degree: -30,
+        skew: hskew,
+        degree: angle * -1,
       };
       break;
     case "right":
       return {
         rotate: 0,
-        skew: -30,
-        degree: 30,
+        skew: hskew * -1,
+        degree: angle,
       };
       break;
     case "top-left":
       return {
         rotate: 0,
-        skew: -30,
-        degree: -30,
+        skew: vskew * -1,
+        degree: angle * -1,
       };
       break;
     case "top-right":
       return {
         rotate: 90,
-        skew: -30,
-        degree: 30,
+        skew: vskew * -1,
+        degree: angle,
       };
       break;
     default:
@@ -96,7 +100,7 @@ if (figma.command == "modal") {
     active: setActive(selection),
   });
 
-  figma.clientStorage.getAsync("easometricClose").then((bool) => {
+  figma.clientStorage.getAsync("explodedviewClose").then((bool) => {
     bool = bool === undefined ? true : bool;
     figma.ui.postMessage({
       type: "setToggle",
@@ -106,7 +110,7 @@ if (figma.command == "modal") {
 
   figma.ui.onmessage = (response) => {
     if (response.type == "set") {
-      figma.clientStorage.getAsync("easometricClose").then((bool) => {
+      figma.clientStorage.getAsync("explodedviewClose").then((bool) => {
         bool = bool === undefined ? true : bool;
         setIsomentric(selection[0], response.direction);
         if (bool) {
@@ -117,7 +121,7 @@ if (figma.command == "modal") {
 
     if (response.type == "toggle") {
       figma.clientStorage
-        .setAsync("easometricClose", response.bool)
+        .setAsync("explodedviewClose", response.bool)
         .then(() => {
           figma.notify(
             response.bool

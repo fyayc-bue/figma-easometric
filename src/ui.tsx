@@ -45,7 +45,7 @@ export const App: React.FC = () => {
   }, []);
 
   return (
-    <div id="easometric">
+    <div id="explodedview">
       <div className="box">
         <div
           className={`left ${direction === "left" && "active"} ${

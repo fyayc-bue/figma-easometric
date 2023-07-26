@@ -1,7 +1,7 @@
 {
-  "name": "figma-easometric",
+  "name": "figma-explodedview",
   "version": "1.0.0",
-  "description": "With Easometric it is really easy to create isometric layers & groups",
+  "description": "This plugin enables surprisingly simple build and maintenance of the Exploded View",
   "main": "code.js",
   "scripts": {
     "dev": "webpack --mode=development --watch",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/aaroniker/figma-easometric.git"
+    "url": "https://github.com/fyayc-bue/figma-easometric.git"
   },
   "author": "Aaron Iker",
   "license": "MIT",

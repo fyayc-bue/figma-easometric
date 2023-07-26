@@ -1,5 +1,5 @@
 {
-  "name": "Easometric",
+  "name": "ExplodedView",
   "id": "750743440401413268",
   "api": "1.0.0",
   "main": "dist/code.js",
@@ -29,7 +29,7 @@
       "separator": true
     },
     {
-      "name": "Open Easometric",
+      "name": "Exploded View",
       "command": "modal"
     }
   ]
